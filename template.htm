@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машинка фуксия</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #7cc9e7;
+        }
+
+        .road {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 120px;
+            background: #616161;
+        }
+
+        .car {
+            position: absolute;
+            bottom: 80px;
+            left: -200px;
+
+            width: 200px;
+            height: 90px;
+
+            background: #e237a0;
+            border-radius: 20px 35px 10px 10px;
+
+            animation: drive 10s ease-out forwards;
+        }
+
+        .car::before {
+            content: "";
+            position: absolute;
+
+            width: 110px;
+            height: 55px;
+
+            left: 45px;
+            top: -35px;
+
+            background: #ec3948;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .car::after {
+            content: "";
+            position: absolute;
+
+            width: 80px;
+            height: 35px;
+
+            left: 60px;
+            top: -25px;
+
+            background: #80c3e2;
+            border: 3px solid #222;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .car {
+            box-shadow:
+                35px 75px 0 -12px #222,
+                35px 75px 0 -20px #777,
+                165px 75px 0 -12px #222,
+                165px 75px 0 -20px #777;
+        }
+
+        .road::before {
+            content: "";
+            position: absolute;
+            top: 55px;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background: repeating-linear-gradient(
+                to right,
+                white 0,
+                white 50px,
+                transparent 50px,
+                transparent 100px
+            );
+        }
+
+        
+        @keyframes drive {
+            from {
+                left: -200px;
+            }
+
+            to {
+                left: calc(100% - 250px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="road"></div>
+
+    <div class="car"></div>
+
+</body>
+</html>
+
